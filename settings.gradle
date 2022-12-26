@@ -14,3 +14,15 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Weather"
 include ':app'
+
+include ':feature:main'
+include ':feature:main-api'
+include ':feature:navigation'
+include ':feature:navigation-api'
+
+include ':lib:core'
+include ':lib:core-api'
+
+include ':ui:uikit'
+
+include ':resource:common'
