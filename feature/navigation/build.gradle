@@ -11,6 +11,8 @@ android {
 }
 
 dependencies {
+    implementation project(":lib:core-api")
     implementation project(":feature:navigation-api")
-
+    implementation project(":feature:home-api")
+    implementation project(":feature:location-api")
 }

@@ -24,6 +24,14 @@ dependencies {
     implementation project(":feature:main-api")
     implementation project(":feature:navigation")
     implementation project(":feature:navigation-api")
+    implementation project(":feature:home")
+    implementation project(":feature:home-api")
+    implementation project(":feature:location")
+    implementation project(":feature:location-api")
+
+    implementation project(":lib:core")
+    implementation project(":lib:core-api")
+    implementation project(":resource:common")
 
 
 

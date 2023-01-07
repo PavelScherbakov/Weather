@@ -11,7 +11,11 @@ android {
 }
 
 dependencies {
-
     implementation project(":feature:main-api")
+    implementation project(":feature:navigation-api")
 
+    implementation project(":lib:core-api")
+
+    implementation project(":ui:uikit")
+    implementation project(":resource:common")
 }

@@ -9,7 +9,3 @@ apply from: "$rootDir/build-common.gradle"
 android {
     namespace 'com.pscher.weather.coreapi'
 }
-
-dependencies {
-
-}
