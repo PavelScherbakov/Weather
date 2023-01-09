@@ -8,13 +8,14 @@ import com.pscher.weather.home.di.HomeNavigationModule
 import com.pscher.weather.home.di.HomeViewModelModule
 import com.pscher.weather.location.di.LocationNavigationModule
 import com.pscher.weather.navigation.di.MasterNavigationModule
+import com.pscher.weather.network.di.BaseApiModule
+import com.pscher.weather.network.weatherapi.di.WeatherApiModule
 import dagger.Component
 import dagger.Module
-import javax.inject.Scope
 
 @Component(
     dependencies = [AppProvider::class],
-    modules = [NavigationModules::class, ViewModelModules::class]
+    modules = [NavigationModules::class, ViewModelModules::class, ApiModules::class]
 )
 @AppScope
 interface FacadeComponent : ProvidersFacade {
@@ -42,5 +43,14 @@ interface NavigationModules
     ]
 )
 interface ViewModelModules
+
+@Module(
+    includes = [
+        BaseApiModule::class,
+        WeatherApiModule::class,
+    ]
+)
+interface ApiModules
+
 
 

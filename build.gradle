@@ -9,6 +9,7 @@ buildscript {
         google()
         mavenCentral()
     }
+
     dependencies {
         classpath 'com.android.tools.build:gradle:7.2.2'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
@@ -60,7 +61,15 @@ ext {
     targetSdkVersion = 32
     compileSdkVersion = 32
 
+
     // App dependencies
+
+    //Network
+    gsonVersion = '2.8.8'
+    okLoggingVersion = '4.10.0'
+    retrofitVersion = '2.9.0'
+    chuckerVersion = "3.5.2"
+
     accompanistVersion = '0.23.0'
     activityComposeVersion = '1.4.0'
 //    androidXVersion = '1.0.0'

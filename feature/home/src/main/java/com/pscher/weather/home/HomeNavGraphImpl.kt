@@ -25,7 +25,7 @@ class HomeNavGraphImpl
         composable(HomeDestinations.HOME_ROUTE) {
             HomeScreen(
                 navigationActions = navigationActions,
-                vm = homeVM,
+                title = homeVM.title,
             )
         }
     }

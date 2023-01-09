@@ -1,0 +1,17 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+}
+
+apply from: "$rootDir/build-common.gradle"
+
+android {
+    namespace 'com.pscher.weather.network.weatherapi'
+}
+
+dependencies {
+    implementation project(':lib:network:base-api')
+    implementation project(':lib:core-api')
+
+}

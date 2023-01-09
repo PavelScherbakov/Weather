@@ -1,6 +1,7 @@
 package com.pscher.weather
 
 import android.app.Application
+import com.pscher.weather.core.APP_LOG_TAG
 import com.pscher.weather.coreapi.AppWithFacade
 import com.pscher.weather.coreapi.ProvidersFacade
 import com.pscher.weather.di.AppComponent
@@ -25,7 +26,7 @@ class App : Application(), AppWithFacade {
                 override fun log(
                     priority: Int, tag: String?, message: String, t: Throwable?
                 ) {
-                    super.log(priority, "WEATHER_$tag", message, t)
+                    super.log(priority, "${APP_LOG_TAG}_$tag", message, t)
                 }
             })
         }

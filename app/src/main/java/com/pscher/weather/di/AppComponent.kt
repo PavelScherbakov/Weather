@@ -3,6 +3,7 @@ package com.pscher.weather.di
 import android.app.Application
 import android.content.Context
 import com.pscher.weather.coreapi.AppProvider
+import com.pscher.weather.coreapi.di.AppContext
 import dagger.BindsInstance
 import dagger.Component
 
@@ -22,6 +23,6 @@ interface AppComponent: AppProvider {
 
     @Component.Factory
     interface Factory {
-        fun create(@BindsInstance context: Context): AppComponent
+        fun create(@AppContext @BindsInstance context: Context): AppComponent
     }
 }

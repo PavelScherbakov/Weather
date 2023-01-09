@@ -18,7 +18,7 @@ import timber.log.Timber
 @Composable
 fun HomeScreen(
     navigationActions: HomeNavigationActions,
-    vm: HomeVM,
+    title: String,
 ) {
     LaunchedEffect(Unit) {
         Timber.e("Execute HomeScreen")
@@ -30,7 +30,7 @@ fun HomeScreen(
         Text(
             modifier = Modifier
                 .align(Alignment.Center),
-            text = vm.title,
+            text = title,
         )
 
         Button(
@@ -59,7 +59,7 @@ fun testHomeScreen() {
                     navigationActions = object : HomeNavigationActions {
                         override fun openFavouriteLocationScreen() {}
                     },
-                    vm = HomeVM(), //todo
+                    title = "Title",
                 )
             }
         }

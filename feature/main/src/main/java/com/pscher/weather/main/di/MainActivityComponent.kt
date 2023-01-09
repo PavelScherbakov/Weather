@@ -17,11 +17,18 @@ interface MainActivityComponent {
     companion object {
         fun create(providersFacade: ProvidersFacade): MainActivityComponent {
             return DaggerMainActivityComponent
-                .builder()
-                .providersFacade(providersFacade)
-                .build()
+                .factory().create(providersFacade)
         }
     }
+
+    @Component.Factory
+    interface Factory {
+        fun create(providersFacade: ProvidersFacade): MainActivityComponent
+    }
+
+    /*@MainActivityLifecycleScope
+    fun provideMainActivityLifecycleCoroutineScope(): LifecycleCoroutineScope*/
+
 
     fun inject (mainActivity: MainActivity)
 }

@@ -1,7 +1,9 @@
 package com.pscher.weather.coreapi
 
 import android.content.Context
+import com.pscher.weather.coreapi.di.AppContext
 
 interface AppProvider {
-    fun provideContext(): Context
+    @AppContext
+    fun provideAppContext(): Context
 }

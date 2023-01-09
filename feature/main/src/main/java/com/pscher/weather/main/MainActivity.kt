@@ -3,6 +3,7 @@ package com.pscher.weather.main
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.lifecycle.lifecycleScope
 import com.pscher.weather.coreapi.AppWithFacade
 import com.pscher.weather.main.di.MainActivityComponent
 import com.pscher.weather.navigationapi.MasterNavGraphMediator
