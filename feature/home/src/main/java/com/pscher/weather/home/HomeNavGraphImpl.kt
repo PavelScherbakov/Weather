@@ -1,5 +1,7 @@
 package com.pscher.weather.home
 
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
 import com.pscher.weather.home.screen.HomeScreen
@@ -23,9 +25,11 @@ class HomeNavGraphImpl
         navigationActions: HomeNavigationActions,
     ) {
         composable(HomeDestinations.HOME_ROUTE) {
+            //val uiState by homeVM.homeUiState.collectAsState()
             HomeScreen(
-                navigationActions = navigationActions,
-                title = homeVM.title,
+                uiState = homeVM.homeUiState.collectAsState().value,
+                onClickFavourite = { navigationActions.openFavouriteLocationScreen() },
+                updateForecast =  { homeVM.updateForecast() }
             )
         }
     }

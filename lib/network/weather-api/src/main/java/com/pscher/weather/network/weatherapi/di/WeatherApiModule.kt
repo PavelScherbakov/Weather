@@ -23,7 +23,7 @@ interface WeatherApiModule {
             @BaseOkHttpclient okHttpClient: OkHttpClient,
         ): Retrofit {
             return Retrofit.Builder()
-                .baseUrl("https://api.open-meteo.com/")
+                .baseUrl("https://api.open-meteo.com/") //todo убрать урл в конфиг
                 .client(okHttpClient)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()

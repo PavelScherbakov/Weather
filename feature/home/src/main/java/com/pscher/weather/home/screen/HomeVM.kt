@@ -1,7 +1,12 @@
 package com.pscher.weather.home.screen
 
 import com.pscher.weather.network.weatherapi.repository.WeatherForecastRepository
+import com.pscher.weather.network.weatherapi.repository.response.ForecastResp
 import kotlinx.coroutines.*
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.update
 import timber.log.Timber
 import javax.inject.Inject
 import kotlin.coroutines.CoroutineContext
@@ -16,11 +21,32 @@ class HomeVM @Inject constructor(
 
     init {
         Timber.e("Create HomeVM")
-        launch {
-            weatherForecastRepository.getForecast()
-        }
     }
 
-    val title = "HomeScreen!!!"
+    private val _homeUiState = MutableStateFlow(defaultHomeUiState)
+    val homeUiState: StateFlow<HomeUiState> = _homeUiState.asStateFlow()
+
+    /**
+     * Обновление данных по прогнозу
+     */
+    suspend fun updateForecast() {
+        Timber.e("HomeVM updateForecast")
+        val response = weatherForecastRepository.getForecast(
+            latitude = 57.81f,
+            longitude = 28.35f,
+        )
+
+        changeHomeUiState(response)
+
+        Timber.e("HomeVM updateForecast response = $response")
+    }
+
+    private fun changeHomeUiState(forecast: ForecastResp) {
+        _homeUiState.update {
+            it.copy(
+                temperature = forecast.currentWeather.temperature.toString()
+            )
+        }
+    }
 
 }
