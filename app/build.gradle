@@ -20,6 +20,7 @@ android {
 
 dependencies {
 
+    //Feature modules
     implementation project(":feature:main")
     implementation project(":feature:main-api")
     implementation project(":feature:navigation")
@@ -28,7 +29,10 @@ dependencies {
     implementation project(":feature:home-api")
     implementation project(":feature:location")
     implementation project(":feature:location-api")
+    implementation project(":feature:setting")
+    implementation project(":feature:setting-api")
 
+    //Lib modules
     implementation project(":lib:core")
     implementation project(":lib:core-api")
     implementation project(":lib:network:base-api")
@@ -36,11 +40,12 @@ dependencies {
     implementation project(":lib:network:geo-api")
     implementation project(":lib:datastore")
 
+    //Resource modules
     implementation project(":resource:common")
 
 
 
-    
+
 //    implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.5.1'
     implementation 'com.google.android.material:material:1.7.0'

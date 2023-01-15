@@ -17,7 +17,8 @@ import androidx.compose.ui.unit.dp
 import com.pscher.weather.core.model.Locality
 import com.pscher.weather.ui.uikit.AppDark10
 import com.pscher.weather.ui.uikit.AppDark20
-import com.pscher.weather.ui.uikit.AppWhite
+import com.pscher.weather.ui.uikit.AppThemeParam
+import com.pscher.weather.ui.uikit.appToolbarHeightDp
 import com.pscher.weather.ui.uikit.view.DelimiterHorizontal
 import timber.log.Timber
 import com.pscher.weather.resource.common.R as CommonR
@@ -36,12 +37,15 @@ fun FavouriteLocationScreen(
 
     }
 
-    Column() {
+    Column(
+        modifier = Modifier.background(color = AppThemeParam.colors.background)
+    ) {
         //ActionBar
         Row(
             modifier = Modifier
                 .fillMaxWidth()
-                .height(60.dp)
+                .height(appToolbarHeightDp)
+                .background(color = AppThemeParam.colors.primary)
         ) {
             IconButton(
                 modifier = Modifier
@@ -53,6 +57,7 @@ fun FavouriteLocationScreen(
                     modifier = Modifier
                         .size(24.dp),
                     painter = painterResource(id = CommonR.drawable.ic_arrow_back),
+                    tint = AppThemeParam.colors.text,
                     contentDescription = "Back",
                 )
             }
@@ -63,6 +68,8 @@ fun FavouriteLocationScreen(
                     .align(Alignment.CenterVertically),
                 text = "Избранное",
                 textAlign = TextAlign.Center,
+                style = AppThemeParam.typography.header03,
+                color = AppThemeParam.colors.text,
             )
 
             IconButton(
@@ -75,6 +82,7 @@ fun FavouriteLocationScreen(
                     modifier = Modifier
                         .size(24.dp),
                     painter = painterResource(id = CommonR.drawable.ic_search),
+                    tint = AppThemeParam.colors.text,
                     contentDescription = "Favourite location",
                 )
             }
@@ -101,9 +109,12 @@ fun FavouriteLocationScreen(
                         modifier = Modifier
                             .fillMaxWidth()
                             .align(Alignment.CenterVertically),
-                        text = favouriteLocality.name,
-                        textAlign = TextAlign.Center
+                        text = "${favouriteLocality.name}, ${favouriteLocality.country}",
+                        textAlign = TextAlign.Center,
+                        style = AppThemeParam.typography.paragraph01,
+                        color = AppThemeParam.colors.textSecondary,
                     )
+
                 }
 
                 DelimiterHorizontal(color = AppDark20)
@@ -117,8 +128,8 @@ fun FavouriteLocationScreen(
 fun testFavouriteLocationScreen() {
     MaterialTheme(
         colors = lightColors(
-            background = AppWhite,
-            surface = AppWhite,
+            background = AppThemeParam.colors.background,
+            surface = AppThemeParam.colors.background,
         )
     ) {
         Surface() {

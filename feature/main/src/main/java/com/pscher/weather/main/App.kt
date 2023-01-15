@@ -12,9 +12,12 @@ import com.pscher.weather.ui.uikit.AppTheme
 
 @Composable
 fun App(
+    isDarkTheme: Boolean,
     context: @Composable (PaddingValues) -> Unit,
 ) {
-    AppTheme {
+    AppTheme(
+        isDarkTheme = isDarkTheme,
+    ) {
         //val appState = rememberAppState()
         val scaffoldState = rememberScaffoldState()
         Scaffold(

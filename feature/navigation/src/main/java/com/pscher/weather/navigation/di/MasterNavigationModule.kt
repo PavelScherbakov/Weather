@@ -7,6 +7,7 @@ import com.pscher.weather.navigation.MasterNavGraphImpl
 import com.pscher.weather.navigation.MasterNavGraphMediatorImpl
 import com.pscher.weather.navigationapi.MasterNavGraph
 import com.pscher.weather.navigationapi.MasterNavGraphMediator
+import com.pscher.weather.settingapi.SettingNavGraphMediator
 import dagger.Binds
 import dagger.Module
 import dagger.Provides
@@ -41,6 +42,7 @@ interface MasterNavigationModule {
             return MasterNavGraphImpl(
                 homeNavGraphMediator = map[HomeNavGraphMediator::class.java]!!.get() as HomeNavGraphMediator,
                 locationNavGraphMediator = map[LocationNavGraphMediator::class.java]!!.get() as LocationNavGraphMediator,
+                settingNavGraphMediator = map[SettingNavGraphMediator::class.java]!!.get() as SettingNavGraphMediator,
             )
         }
     }

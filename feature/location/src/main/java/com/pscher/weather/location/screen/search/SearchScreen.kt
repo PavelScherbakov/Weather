@@ -17,9 +17,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.pscher.weather.core.model.Locality
 import com.pscher.weather.location.screen.search.view.SearchText
-import com.pscher.weather.ui.uikit.AppDark10
-import com.pscher.weather.ui.uikit.AppDark20
-import com.pscher.weather.ui.uikit.AppWhite
+import com.pscher.weather.ui.uikit.*
 import com.pscher.weather.ui.uikit.view.DelimiterHorizontal
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
@@ -39,12 +37,15 @@ fun SearchScreen(
 
     val scope: CoroutineScope = rememberCoroutineScope()
 
-    Column() {
+    Column(
+        modifier = Modifier.background(color = AppThemeParam.colors.background)
+    ) {
         //ActionBar
         Row(
             modifier = Modifier
                 .fillMaxWidth()
-                .height(60.dp)
+                .height(appToolbarHeightDp)
+                .background(color = AppThemeParam.colors.primary)
         ) {
             IconButton(
                 modifier = Modifier
@@ -56,6 +57,7 @@ fun SearchScreen(
                     modifier = Modifier
                         .size(24.dp),
                     painter = painterResource(id = CommonR.drawable.ic_arrow_back),
+                    tint = AppThemeParam.colors.text,
                     contentDescription = "Back",
                 )
             }
@@ -86,11 +88,9 @@ fun SearchScreen(
                     items = uiState.resultSearch,
                     //key = { it.id },
                 ) { item ->
-
                     Box(
                         modifier = Modifier
                             .fillMaxWidth()
-                            .background(AppDark10)
                             .clickable { onClickItem(item) }
                     ) {
                         Row(
@@ -101,18 +101,11 @@ fun SearchScreen(
                             Text(
                                 modifier = Modifier
                                     .align(Alignment.CenterVertically),
-                                text = item.name,
-                                textAlign = TextAlign.Center
+                                text = "${item.name}, ${item.country}",
+                                textAlign = TextAlign.Center,
+                                style = AppThemeParam.typography.paragraph01,
+                                color = AppThemeParam.colors.textSecondary,
                             )
-
-                            Text(
-                                modifier = Modifier
-                                    .align(Alignment.CenterVertically)
-                                    .padding(start = 16.dp),
-                                text = item.country ?: "",
-                                textAlign = TextAlign.Center
-                            )
-
                         }
                     }
 

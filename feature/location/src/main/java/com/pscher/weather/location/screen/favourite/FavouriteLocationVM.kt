@@ -18,7 +18,6 @@ class FavouriteLocationVM @Inject constructor(
     }
 
     private val _favouriteUiState = MutableStateFlow(defaultFavouriteLocationUiState)
-    //private val _favouriteUiState = MutableStateFlow(testFavouriteLocationUiState)
     val favouriteUiState: StateFlow<FavouriteLocationUiState> = _favouriteUiState.asStateFlow()
 
     suspend fun updateFavouriteList() {
@@ -32,5 +31,4 @@ class FavouriteLocationVM @Inject constructor(
             )
         }
     }
-
 }

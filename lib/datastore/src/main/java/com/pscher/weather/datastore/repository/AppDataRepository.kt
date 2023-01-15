@@ -1,5 +1,7 @@
 package com.pscher.weather.datastore.repository
 
+import android.content.Context
+import com.pscher.weather.coreapi.di.AppContext
 import com.pscher.weather.datastore.repository.base.pref.ReadWrite
 import com.pscher.weather.datastore.repository.room.dao.LocalityDao
 import javax.inject.Inject
@@ -11,8 +13,8 @@ interface AppDataRepository {
 
 interface AppSettingDataStore {
     fun currentLocalityId(): ReadWrite<Int>
+    fun appThemeLight(): ReadWrite<Boolean>
 }
-
 
 class AppDataRepositoryImpl @Inject constructor(
     private val appSettingDataStore: AppSettingDataStore,
@@ -25,4 +27,9 @@ class AppDataRepositoryImpl @Inject constructor(
     override fun localityDao(): LocalityDao {
         return localityDao
     }
+}
+
+interface AppDataRepositoryProvide {
+    @AppContext
+    fun provideAppDataRepository(): AppDataRepository
 }

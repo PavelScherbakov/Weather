@@ -17,4 +17,5 @@ object HomeDestinations {
 
 interface HomeNavigationActions {
     fun openFavouriteLocationScreen()
+    fun openSettingScreen()
 }

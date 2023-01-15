@@ -20,6 +20,8 @@
             <option value="$PROJECT_DIR$/feature/main-api" />
             <option value="$PROJECT_DIR$/feature/navigation" />
             <option value="$PROJECT_DIR$/feature/navigation-api" />
+            <option value="$PROJECT_DIR$/feature/setting" />
+            <option value="$PROJECT_DIR$/feature/setting-api" />
             <option value="$PROJECT_DIR$/lib" />
             <option value="$PROJECT_DIR$/lib/core" />
             <option value="$PROJECT_DIR$/lib/core-api" />

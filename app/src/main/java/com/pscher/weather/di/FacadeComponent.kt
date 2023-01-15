@@ -5,6 +5,7 @@ import com.pscher.weather.coreapi.AppProvider
 import com.pscher.weather.coreapi.ProvidersFacade
 import com.pscher.weather.coreapi.di.AppScope
 import com.pscher.weather.datastore.di.DataStoreModule
+import com.pscher.weather.datastore.repository.AppDataRepository
 import com.pscher.weather.geoapi.di.GeoApiModule
 import com.pscher.weather.home.di.HomeNavigationModule
 import com.pscher.weather.home.di.HomeViewModelModule
@@ -12,6 +13,7 @@ import com.pscher.weather.location.di.LocationNavigationModule
 import com.pscher.weather.navigation.di.MasterNavigationModule
 import com.pscher.weather.network.di.BaseApiModule
 import com.pscher.weather.network.weatherapi.di.WeatherApiModule
+import com.pscher.weather.setting.di.SettingNavigationModule
 import dagger.Component
 import dagger.Module
 
@@ -28,6 +30,8 @@ interface FacadeComponent : ProvidersFacade {
                 .build()
     }
 
+    //fun provideAppDataRepository(): AppDataRepository
+
 }
 
 @Module(
@@ -35,6 +39,7 @@ interface FacadeComponent : ProvidersFacade {
         MasterNavigationModule::class,
         HomeNavigationModule::class,
         LocationNavigationModule::class,
+        SettingNavigationModule::class,
     ]
 )
 interface NavigationModules

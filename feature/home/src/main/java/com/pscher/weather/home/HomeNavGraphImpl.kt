@@ -47,8 +47,9 @@ class HomeNavGraphImpl
 
             HomeScreen(
                 uiState = homeVM.homeUiState.collectAsState().value,
+                updateForecast =  { homeVM.updateForecast() },
                 onClickFavourite = { navigationActions.openFavouriteLocationScreen() },
-                updateForecast =  { homeVM.updateForecast() }
+                onClickSetting = { navigationActions.openSettingScreen() }
             )
         }
 

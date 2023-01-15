@@ -1,6 +1,7 @@
 package com.pscher.weather.main.di
 
 import com.pscher.weather.coreapi.ProvidersFacade
+import com.pscher.weather.datastore.repository.AppDataRepository
 import com.pscher.weather.main.MainActivity
 import com.pscher.weather.navigationapi.MasterNavGraphMediator
 import dagger.Component
@@ -23,7 +24,9 @@ interface MainActivityComponent {
 
     @Component.Factory
     interface Factory {
-        fun create(providersFacade: ProvidersFacade): MainActivityComponent
+        fun create(
+            providersFacade: ProvidersFacade,
+        ): MainActivityComponent
     }
 
     /*@MainActivityLifecycleScope
@@ -40,5 +43,6 @@ interface MainActivityModule {
         fun provideMasterNavGraphMediator(map: Map<Class<*>, @JvmSuppressWildcards Provider<Any>>): MasterNavGraphMediator {
             return map[MasterNavGraphMediator::class.java]!!.get() as MasterNavGraphMediator
         }
+
     }
 }

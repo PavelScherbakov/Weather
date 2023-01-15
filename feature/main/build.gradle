@@ -18,4 +18,5 @@ dependencies {
 
     implementation project(":ui:uikit")
     implementation project(":resource:common")
+    implementation project(path: ':lib:datastore')
 }

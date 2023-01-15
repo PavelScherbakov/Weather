@@ -14,7 +14,6 @@ import com.pscher.weather.datastore.repository.room.dao.LocalityDao
 import dagger.Module
 import dagger.Provides
 import dagger.Reusable
-import javax.inject.Singleton
 
 private const val APP_DATABASE_NAME = "APP_DB"
 

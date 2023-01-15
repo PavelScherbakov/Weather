@@ -1,8 +1,11 @@
 package com.pscher.weather.ui.uikit
 
 import androidx.compose.material.Typography
+import androidx.compose.ui.text.ExperimentalTextApi
+import androidx.compose.ui.text.PlatformTextStyle
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.*
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.sp
 import com.pscher.weather.resource.common.R
 
@@ -18,8 +21,49 @@ val fontApp = FontFamily(
     Font(R.font.helvetica_neue_condensed_black, FontWeight.Black),
 )
 
-data class AppTypography internal constructor(
-    val paragraph1: TextStyle = TextStyle(
+data class AppTypography
+internal constructor(
+    val header01: TextStyle = TextStyle(
+        fontFamily = fontApp,
+        fontWeight = FontWeight.Bold,
+        fontSize = 28.sp,
+        lineHeight = 32.sp,
+        fontStyle = FontStyle.Normal,
+        textAlign = TextAlign.Start,
+    ),
+    val header02: TextStyle = TextStyle(
+        fontFamily = fontApp,
+        fontWeight = FontWeight.Bold,
+        fontSize = 20.sp,
+        lineHeight = 24.sp,
+        fontStyle = FontStyle.Normal,
+        textAlign = TextAlign.Start,
+    ),
+    val header03: TextStyle = TextStyle(
+        fontFamily = fontApp,
+        fontWeight = FontWeight.Bold,
+        fontSize = 18.sp,
+        lineHeight = 22.sp,
+        fontStyle = FontStyle.Normal,
+        textAlign = TextAlign.Start,
+    ),
+    val paragraph01: TextStyle = TextStyle(
+        fontFamily = fontApp,
+        fontWeight = FontWeight.Normal,
+        fontSize = 16.sp,
+        lineHeight = 24.sp,
+        fontStyle = FontStyle.Normal,
+        textAlign = TextAlign.Start,
+    ),
+    val paragraph02: TextStyle = TextStyle(
+        fontFamily = fontApp,
+        fontWeight = FontWeight.Normal,
+        fontSize = 13.sp,
+        lineHeight = 16.sp,
+        fontStyle = FontStyle.Normal,
+        textAlign = TextAlign.Start,
+    ),
+    /*val paragraph1: TextStyle = TextStyle(
         fontFamily = fontApp,
         fontSize = 15.sp,
         fontWeight = FontWeight.Normal,
@@ -93,14 +137,15 @@ data class AppTypography internal constructor(
         fontWeight = FontWeight.SemiBold,
         fontSize = 14.sp,
         letterSpacing = 1.25.sp
-    ),
+    ),*/
     val materialTypography: Typography = Typography(
-        body1 = paragraph1
+        body1 = paragraph01
     ),
+    /*
     val textMediumBold: TextStyle = TextStyle(
         fontSize = 20.sp,
         fontWeight = FontWeight.Bold,
         lineHeight = 20.sp,
         fontFamily = fontApp,
-    ),
+    ),*/
 )

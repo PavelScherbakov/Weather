@@ -13,13 +13,17 @@ import com.pscher.weather.locationapi.LocationNavGraphMediator
 import com.pscher.weather.locationapi.LocationNavigationActions
 import com.pscher.weather.navigationapi.MasterDestinations
 import com.pscher.weather.navigationapi.MasterNavGraph
+import com.pscher.weather.settingapi.SettingDestinations
+import com.pscher.weather.settingapi.SettingNavGraphMediator
+import com.pscher.weather.settingapi.SettingNavigationActions
 import timber.log.Timber
 import javax.inject.Inject
 
 class MasterNavGraphImpl @Inject constructor(
     private val homeNavGraphMediator: HomeNavGraphMediator,
     private val locationNavGraphMediator: LocationNavGraphMediator,
-): MasterNavGraph, HomeNavigationActions, LocationNavigationActions {
+    private val settingNavGraphMediator: SettingNavGraphMediator,
+): MasterNavGraph, HomeNavigationActions, LocationNavigationActions, SettingNavigationActions {
 
     init {
         Timber.e("Create MasterNavGraphImpl")
@@ -62,12 +66,26 @@ class MasterNavGraphImpl @Inject constructor(
                     addLocationNavGraph(this@MasterNavGraphImpl)
                 }
             }
+
+            navigation(
+                startDestination = SettingDestinations.SETTING_ROUTE,
+                route = MasterDestinations.SETTING_GRAPH_ROUTE,
+            ) {
+                settingNavGraphMediator.provideSettingNavGraph().apply {
+                    addSettingNavGraph(this@MasterNavGraphImpl)
+                }
+            }
+
         }
 
     }
 
     override fun openFavouriteLocationScreen() {
         navController.navigate(LocationDestinations.FAVOURITE_LOCATION_ROUTE)
+    }
+
+    override fun openSettingScreen() {
+        navController.navigate(SettingDestinations.SETTING_ROUTE)
     }
 
     override fun openHomeScreen(localityId: Int) {

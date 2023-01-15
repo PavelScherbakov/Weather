@@ -10,7 +10,9 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.*
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.input.VisualTransformation
@@ -38,21 +40,10 @@ fun SearchText(
     Row(
         modifier = modifier
             .background(
-                color = AppThemeParam.colors.backgroundTextField,
+                color = AppThemeParam.colors.primary,
                 shape = RoundedCornerShape(8.dp)
             )
     ) {
-
-        /*Icon(
-            modifier = Modifier
-                .padding(start = 12.dp, top = 10.dp, bottom = 10.dp)
-                .size(20.dp)
-                .align(Alignment.CenterVertically),
-            painter = painterResource(id = R.drawable.ic_search_loupe),
-            contentDescription = "Search loupe",
-            tint = if (search.isNullOrEmpty() && !isFilterFocused) Dark50 else MainDark
-        )*/
-
         BasicTextField(
             modifier = focusModifier
                 .weight(1f)
@@ -65,7 +56,8 @@ fun SearchText(
             value = value,
             onValueChange = { onSearch(it) },
             enabled = enabled,
-            textStyle = AppThemeParam.typography.paragraph1,
+            textStyle = AppThemeParam.typography.paragraph01.copy(color = AppThemeParam.colors.text),
+            cursorBrush = SolidColor(AppThemeParam.colors.text),
             decorationBox = @Composable { innerTextField ->
                 // places leading icon, text field with label and placeholder, trailing icon
                 TextFieldDefaults.TextFieldDecorationBox(
@@ -74,9 +66,9 @@ fun SearchText(
                     innerTextField = innerTextField,
                     placeholder = {
                         Text(
-                            text = "Search",
-                            style = AppThemeParam.typography.paragraph1,
-                            color = AppThemeParam.colors.textSecondary,
+                            text = "Город/населённый пункт",
+                            style = AppThemeParam.typography.paragraph01,
+                            color = AppThemeParam.colors.textHint,
                         )
                     },
                     singleLine = true,
@@ -121,8 +113,8 @@ fun SearchText(
 private fun testSearchText() {
     MaterialTheme(
         colors = lightColors(
-            background = AppThemeParam.colors.background,
-            surface = AppThemeParam.colors.background,
+            background = AppThemeParam.colors.primary,
+            surface = AppThemeParam.colors.primary,
         )
     ) {
         Surface() {
@@ -143,8 +135,8 @@ private fun testSearchText() {
 private fun testSearchTextEmpty() {
     MaterialTheme(
         colors = lightColors(
-            background = AppThemeParam.colors.background,
-            surface = AppThemeParam.colors.background,
+            background = AppThemeParam.colors.primary,
+            surface = AppThemeParam.colors.primary,
         )
     ) {
         Surface() {

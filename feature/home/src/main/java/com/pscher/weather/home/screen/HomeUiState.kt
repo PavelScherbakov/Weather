@@ -6,6 +6,7 @@ import com.pscher.weather.core.model.testLocality
 import com.pscher.weather.network.weatherapi.repository.response.*
 
 data class HomeUiState(
+    val isUserRefresh: Boolean = false,
     val currentLocality: Locality,
     val currentWeather: CurrentWeather,
     val dailyForecastWeather: DailyForecastWeather,

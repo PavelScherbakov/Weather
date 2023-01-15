@@ -17,4 +17,5 @@ dependencies {
     implementation project(":feature:location-api")
 
     implementation project(":lib:network:geo-api")
+    implementation project(path: ':feature:setting-api')
 }

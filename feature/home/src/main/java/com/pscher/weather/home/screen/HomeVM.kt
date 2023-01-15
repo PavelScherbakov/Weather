@@ -28,7 +28,7 @@ class HomeVM @Inject constructor(
     init {
         //Устанавливаем сохранённое ранее текущее местоположения
         //todo runBlocking хорошо это или нет в данном случае?
-        runBlocking {
+        runBlocking(Dispatchers.IO) {
             val currentLocalityId = appDataRepository.appSettingDataStore().currentLocalityId().get().firstOrNull()
             Timber.e("HomeVM init currentLocalityId = $currentLocalityId")
             setCurrentLocality(currentLocalityId ?: 0)
@@ -39,18 +39,7 @@ class HomeVM @Inject constructor(
     suspend fun setCurrentLocality(localityId: Int) {
         Timber.e("HomeVM setCurrentLocality localityId = $localityId")
 
-        /*val currentLocalityId = if (localityId != -1) localityId
-        else appDataRepository.appSettingDataStore().currentLocalityId().get().firstOrNull() ?: 0
-
-        Timber.e("HomeVM setCurrentLocality currentLocalityId = $currentLocalityId")
-*/
         if (localityId == -1) return
-
-        /*_homeUiState.update { homeUiState ->
-            homeUiState.copy(
-                currentLocality = defaultLocality,
-            )
-        }*/
 
         //Получаем местоположение из базы по id
         val currentLocality: Locality =
@@ -73,8 +62,15 @@ class HomeVM @Inject constructor(
     /**
      * Обновление данных по прогнозу
      */
-    suspend fun updateForecast() {
+    suspend fun updateForecast(isUserRefresh: Boolean = false) {
         Timber.e("HomeVM updateForecast timezone = ${TimeZone.getDefault().id}")
+
+        _homeUiState.update { homeUiState ->
+            homeUiState.copy(
+                isUserRefresh = isUserRefresh,
+            )
+        }
+
         val response = weatherForecastRepository.getForecast(
             latitude = homeUiState.value.currentLocality.latitude,
             longitude = homeUiState.value.currentLocality.longitude,
@@ -88,6 +84,7 @@ class HomeVM @Inject constructor(
     private fun changeHomeUiState(forecast: ForecastResp) {
         _homeUiState.update { currentHomeUiState ->
             currentHomeUiState.copy(
+                isUserRefresh = false,
                 currentWeather = forecast.currentWeather,
                 dailyForecastWeather = forecast.daily,
             )
