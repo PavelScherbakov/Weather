@@ -1,7 +1,6 @@
 package com.pscher.weather.datastore.repository
 
-import com.pscher.weather.coreapi.di.AppContext
-import com.pscher.weather.datastore.repository.base.pref.ReadWrite
+import com.pscher.weather.datastore.repository.base.datastore.ReadWrite
 import com.pscher.weather.datastore.repository.room.dao.LocalityDao
 import javax.inject.Inject
 

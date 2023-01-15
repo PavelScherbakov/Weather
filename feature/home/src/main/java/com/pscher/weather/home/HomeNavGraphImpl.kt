@@ -14,7 +14,6 @@ import com.pscher.weather.homeapi.HomeDestinationsArgs.LOCALITY_ID_ARG
 import com.pscher.weather.homeapi.HomeNavGraph
 import com.pscher.weather.homeapi.HomeNavigationActions
 import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import timber.log.Timber
 import javax.inject.Inject
@@ -52,26 +51,5 @@ class HomeNavGraphImpl
                 onClickSetting = { navigationActions.openSettingScreen() }
             )
         }
-
-
-        /*composable(
-            TodoDestinations.ADD_EDIT_TASK_ROUTE,
-            arguments = listOf(
-                navArgument(TITLE_ARG) { type = NavType.IntType },
-                navArgument(TASK_ID_ARG) { type = NavType.StringType; nullable = true },
-            )
-        ) { entry ->
-            val taskId = entry.arguments?.getString(TASK_ID_ARG)
-            AddEditTaskScreen(
-                topBarTitle = entry.arguments?.getInt(TITLE_ARG)!!,
-                onTaskUpdate = {
-                    navActions.navigateToTasks(
-                        if (taskId == null) ADD_EDIT_RESULT_OK else EDIT_RESULT_OK
-                    )
-                },
-                onBack = { navController.popBackStack() }
-            )
-        }*/
-
     }
 }

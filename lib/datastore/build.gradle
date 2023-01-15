@@ -11,16 +11,14 @@ android {
 }
 
 dependencies {
-    //implementation project(':lib:core')
-    implementation project(':lib:core-api')
+    implementation project(":lib:core")
+    implementation project(":lib:core-api")
 
     implementation "androidx.datastore:datastore-preferences:$dataStoreVersion"
 
     implementation("androidx.room:room-runtime:$roomVersion")
-    implementation project(path: ':lib:core')
     annotationProcessor("androidx.room:room-compiler:$roomVersion")
     kapt("androidx.room:room-compiler:$roomVersion")
 
     implementation("androidx.room:room-ktx:$roomVersion")
-
 }

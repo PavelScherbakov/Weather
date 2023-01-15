@@ -5,7 +5,7 @@ import androidx.room.Room
 import com.pscher.weather.coreapi.di.AppContext
 import com.pscher.weather.coreapi.di.AppScope
 import com.pscher.weather.datastore.repository.*
-import com.pscher.weather.datastore.repository.pref.AppSettingDataStoreImpl
+import com.pscher.weather.datastore.repository.datastore.AppSettingDataStoreImpl
 import com.pscher.weather.datastore.repository.room.AppDatabase
 import com.pscher.weather.datastore.repository.room.AppDatabaseContract
 import com.pscher.weather.datastore.repository.room.dao.LocalityDao
@@ -70,5 +70,4 @@ interface DataStoreModule {
     @IntoMap
     @ClassKey(AppDataRepositoryMediator::class)
     fun bindAppDataRepositoryMediator(mediator: AppDataRepositoryMediatorImpl): Any
-
 }

@@ -12,14 +12,10 @@ android {
 
 dependencies {
     implementation project(":feature:setting-api")
-    implementation project(path: ':lib:datastore')
-//    implementation project(":feature:navigation-api")
-//    implementation project(":lib:core-api")
-//    implementation project(":lib:network:geo-api")
-//    implementation project(":ui:uikit")
+
+    implementation project(":lib:datastore")
+    implementation project(":lib:core-api")
+
     implementation project(":resource:common")
-    implementation project(path: ':ui:uikit')
-    implementation project(path: ':lib:core-api')
-//    implementation project(path: ':lib:core')
-//    implementation project(path: ':lib:datastore')
+    implementation project(":ui:uikit")
 }

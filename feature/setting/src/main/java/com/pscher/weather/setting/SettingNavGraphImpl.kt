@@ -9,7 +9,6 @@ import com.pscher.weather.setting.screen.SettingVM
 import com.pscher.weather.settingapi.SettingDestinations
 import com.pscher.weather.settingapi.SettingNavGraph
 import com.pscher.weather.settingapi.SettingNavigationActions
-import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 import timber.log.Timber
 import javax.inject.Inject

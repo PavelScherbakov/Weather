@@ -2,7 +2,6 @@ package com.pscher.weather.network.weatherapi.repository.api
 
 import com.pscher.weather.network.weatherapi.repository.response.ForecastResp
 import retrofit2.http.GET
-import retrofit2.http.Path
 import retrofit2.http.Query
 import java.util.*
 

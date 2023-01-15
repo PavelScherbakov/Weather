@@ -29,8 +29,6 @@ fun SettingScreen(
         Timber.e("Execute SettingScreen")
     }
 
-    val scope: CoroutineScope = rememberCoroutineScope()
-
     Column(
         modifier = Modifier.background(color = AppThemeParam.colors.background)
     ) {

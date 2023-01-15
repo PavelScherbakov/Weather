@@ -16,7 +16,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.pscher.weather.core.model.Locality
 import com.pscher.weather.ui.uikit.AppThemeParam
-import com.pscher.weather.ui.uikit.Dark10
 import com.pscher.weather.ui.uikit.appToolbarHeightDp
 import com.pscher.weather.ui.uikit.view.DelimiterHorizontal
 import timber.log.Timber
@@ -31,9 +30,6 @@ fun FavouriteLocationScreen(
 ) {
     LaunchedEffect(Unit) {
         Timber.e("Execute FavouriteLocationScreen")
-
-        //Обновляем список избранных
-
     }
 
     Column(

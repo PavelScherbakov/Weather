@@ -15,9 +15,9 @@ dependencies {
     implementation project(":feature:navigation-api")
 
     implementation project(":lib:core-api")
+    implementation project(":lib:datastore")
 
     implementation project(":ui:uikit")
     implementation project(":resource:common")
-    implementation project(path: ':lib:datastore')
 
 }

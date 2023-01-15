@@ -10,7 +10,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.pscher.weather.ui.uikit.AppThemeParam
-import com.pscher.weather.ui.uikit.Dark10
 
 @Composable
 fun ColumnScope.DelimiterHorizontal(

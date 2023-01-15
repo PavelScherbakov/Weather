@@ -115,14 +115,9 @@ fun HomeScreen(
             },
             indicator = { state, trigger ->
                 SwipeRefreshIndicator(
-                    // Pass the SwipeRefreshState + trigger through
                     state = state,
                     refreshTriggerDistance = trigger,
-                    // Enable the scale animation
-                    //scale = true,
-                    // Change the color and shape
                     backgroundColor = AppThemeParam.colors.primaryLight,
-                    //shape = MaterialTheme.shapes.small,
                 )
             }
         ){
@@ -152,12 +147,6 @@ fun HomeScreen(
                             color = AppThemeParam.colors.text,
                         )
 
-                        /*RowNameValue(
-                            modifier = Modifier.padding(top = 16.dp),
-                            name = "Дата:",
-                            value = uiState.currentWeather.time,
-                        )*/
-
                         RowNameValue(
                             modifier = Modifier.padding(top = 16.dp),
                             name = "Температура:",
@@ -171,8 +160,8 @@ fun HomeScreen(
                     }
                 }
 
+                //Блок прогноза погоды на 7 дней
                 item {
-                    //Блок прогноза погоды на 7 дней
                     Text(
                         modifier = Modifier
                             .fillMaxWidth()
@@ -182,7 +171,6 @@ fun HomeScreen(
                         style = AppThemeParam.typography.header02,
                         color = AppThemeParam.colors.textSecondary,
                     )
-
                 }
 
                 itemsIndexed(
@@ -196,8 +184,6 @@ fun HomeScreen(
                 }
             }
         }
-
-
     }
 }
 
@@ -206,8 +192,8 @@ fun HomeScreen(
 fun testHomeScreen() {
     MaterialTheme(
         colors = lightColors(
-            background = AppWhite,
-            surface = AppWhite,
+            background = AppThemeParam.colors.background,
+            surface = AppThemeParam.colors.background,
         )
     ) {
         Surface() {

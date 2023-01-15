@@ -13,9 +13,7 @@ import com.pscher.weather.locationapi.LocationDestinations
 import com.pscher.weather.locationapi.LocationNavGraph
 import com.pscher.weather.locationapi.LocationNavigationActions
 import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 import timber.log.Timber
 import javax.inject.Inject
 
@@ -59,6 +57,5 @@ class LocationNavGraphImpl @Inject constructor(
                 },
             )
         }
-
     }
 }

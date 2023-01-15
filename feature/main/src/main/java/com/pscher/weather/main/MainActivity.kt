@@ -7,7 +7,6 @@ import androidx.compose.runtime.collectAsState
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import com.pscher.weather.coreapi.AppWithFacade
 import com.pscher.weather.datastore.repository.AppDataRepository
-import com.pscher.weather.datastore.repository.AppSettingDataStore
 import com.pscher.weather.main.di.MainActivityComponent
 import com.pscher.weather.navigationapi.MasterNavGraphMediator
 import com.pscher.weather.ui.uikit.AppThemeParam

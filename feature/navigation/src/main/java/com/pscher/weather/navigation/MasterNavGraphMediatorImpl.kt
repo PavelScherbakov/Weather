@@ -7,8 +7,6 @@ import javax.inject.Inject
 
 class MasterNavGraphMediatorImpl
 @Inject constructor(
-    //private val homeNavGraphMediator: HomeNavGraphMediator,
-    //private val locationGraphMediator: LocationNavGraphMediator,
     private val masterNavGraph: MasterNavGraph,
 ) : MasterNavGraphMediator {
 
@@ -17,9 +15,6 @@ class MasterNavGraphMediatorImpl
     }
 
     override fun provideMasterNavGraph(): MasterNavGraph {
-        return /*MasterNavGraphImpl(
-            homeNavGraphMediator = homeNavGraphMediator,
-            locationNavGraphMediator = locationGraphMediator,
-        )*/masterNavGraph
+        return masterNavGraph
     }
 }

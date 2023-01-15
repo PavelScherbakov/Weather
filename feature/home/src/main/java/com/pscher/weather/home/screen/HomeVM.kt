@@ -2,7 +2,6 @@ package com.pscher.weather.home.screen
 
 import com.pscher.weather.core.model.Locality
 import com.pscher.weather.core.model.defaultLocality
-import com.pscher.weather.core.model.testLocality
 import com.pscher.weather.datastore.repository.AppDataRepository
 import com.pscher.weather.datastore.repository.room.entity.toLocality
 import com.pscher.weather.network.weatherapi.repository.WeatherForecastRepository
@@ -27,7 +26,6 @@ class HomeVM @Inject constructor(
     val homeUiState: StateFlow<HomeUiState> = _homeUiState.asStateFlow()
     init {
         //Устанавливаем сохранённое ранее текущее местоположения
-        //todo runBlocking хорошо это или нет в данном случае?
         runBlocking(Dispatchers.IO) {
             val currentLocalityId = appDataRepository.appSettingDataStore().currentLocalityId().get().firstOrNull()
             Timber.e("HomeVM init currentLocalityId = $currentLocalityId")
@@ -56,7 +54,6 @@ class HomeVM @Inject constructor(
                 currentLocality = currentLocality,
             )
         }
-
     }
 
     /**

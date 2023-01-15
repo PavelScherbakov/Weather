@@ -93,7 +93,6 @@ fun SearchScreen(
                 modifier = Modifier
                     .padding(top = 0.dp),
                 userScrollEnabled = true,
-                //horizontalAlignment = Alignment.CenterHorizontally,
             ) {
                 items(
                     items = uiState.resultSearch,
@@ -124,7 +123,6 @@ fun SearchScreen(
                 }
             }
         }
-
     }
 }
 
@@ -133,8 +131,8 @@ fun SearchScreen(
 fun testFavouriteLocationScreen() {
     MaterialTheme(
         colors = lightColors(
-            background = AppWhite,
-            surface = AppWhite,
+            background = AppThemeParam.colors.background,
+            surface = AppThemeParam.colors.background,
         )
     ) {
         Surface() {

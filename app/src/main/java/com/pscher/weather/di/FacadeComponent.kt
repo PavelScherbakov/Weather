@@ -29,9 +29,6 @@ interface FacadeComponent : ProvidersFacade {
                 .appProvider(AppComponent.create(application))
                 .build()
     }
-
-    //fun provideAppDataRepository(): AppDataRepository
-
 }
 
 @Module(

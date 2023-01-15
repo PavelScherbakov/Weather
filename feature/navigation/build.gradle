@@ -11,11 +11,11 @@ android {
 }
 
 dependencies {
-    implementation project(":lib:core-api")
     implementation project(":feature:navigation-api")
     implementation project(":feature:home-api")
     implementation project(":feature:location-api")
+    implementation project(":feature:setting-api")
 
+    implementation project(":lib:core-api")
     implementation project(":lib:network:geo-api")
-    implementation project(path: ':feature:setting-api')
 }

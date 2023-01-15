@@ -13,5 +13,4 @@ android {
 dependencies {
     implementation project(':lib:network:base-api')
     implementation project(':lib:core-api')
-
 }

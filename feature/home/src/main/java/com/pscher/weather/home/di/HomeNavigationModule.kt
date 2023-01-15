@@ -5,13 +5,11 @@ import com.pscher.weather.home.HomeNavGraphImpl
 import com.pscher.weather.home.HomeNavGraphMediatorImpl
 import com.pscher.weather.homeapi.HomeNavGraph
 import com.pscher.weather.homeapi.HomeNavGraphMediator
-import com.pscher.weather.navigationapi.MasterNavGraph
 import dagger.Binds
 import dagger.Module
 import dagger.Provides
 import dagger.multibindings.ClassKey
 import dagger.multibindings.IntoMap
-import javax.inject.Provider
 
 @Module
 interface HomeNavigationModule {

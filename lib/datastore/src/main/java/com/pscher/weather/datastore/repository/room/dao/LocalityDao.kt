@@ -15,10 +15,6 @@ interface LocalityDao {
     @Query("SELECT * FROM locality WHERE id = :localityId")
     suspend fun loadById(localityId: Int): LocalityEntity
 
-    /*@Query("SELECT * FROM user WHERE first_name LIKE :first AND " +
-            "last_name LIKE :last LIMIT 1")
-    fun findByName(first: String, last: String): User*/
-
     @Insert
     suspend fun insert(localityEntity: LocalityEntity)
 

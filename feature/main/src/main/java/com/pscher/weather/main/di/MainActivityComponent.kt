@@ -1,7 +1,6 @@
 package com.pscher.weather.main.di
 
 import com.pscher.weather.coreapi.ProvidersFacade
-import com.pscher.weather.coreapi.di.AppScope
 import com.pscher.weather.datastore.repository.AppDataRepository
 import com.pscher.weather.datastore.repository.AppDataRepositoryMediator
 import com.pscher.weather.main.MainActivity
@@ -31,10 +30,6 @@ interface MainActivityComponent {
         ): MainActivityComponent
     }
 
-    /*@MainActivityLifecycleScope
-    fun provideMainActivityLifecycleCoroutineScope(): LifecycleCoroutineScope*/
-
-
     fun inject (mainActivity: MainActivity)
 }
 
@@ -50,7 +45,5 @@ interface MainActivityModule {
         fun provideAppDataRepositoryMediator(map: Map<Class<*>, @JvmSuppressWildcards Provider<Any>>): AppDataRepository {
             return (map[AppDataRepositoryMediator::class.java]!!.get() as AppDataRepositoryMediator).provideAppDataRepository()
         }
-
-
     }
 }

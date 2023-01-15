@@ -1,4 +1,4 @@
-package com.pscher.weather.datastore.repository.base.pref
+package com.pscher.weather.datastore.repository.base.datastore
 
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
