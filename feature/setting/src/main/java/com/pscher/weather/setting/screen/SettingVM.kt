@@ -27,7 +27,7 @@ class SettingVM @Inject constructor(
 
             _settingUiState.update { settingUiState ->
                 settingUiState.copy(
-                    appDarkTheme = appDarkTheme,
+                    appThemeDark = appDarkTheme,
                 )
             }
         }
@@ -38,7 +38,7 @@ class SettingVM @Inject constructor(
 
         _settingUiState.update { settingUiState ->
             settingUiState.copy(
-                appDarkTheme = checked,
+                appThemeDark = checked,
             )
         }
     }
