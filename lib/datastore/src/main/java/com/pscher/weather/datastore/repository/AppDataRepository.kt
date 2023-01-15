@@ -28,7 +28,4 @@ class AppDataRepositoryImpl @Inject constructor(
     }
 }
 
-interface AppDataRepositoryProvide {
-    @AppContext
-    fun provideAppDataRepository(): AppDataRepository
-}
+

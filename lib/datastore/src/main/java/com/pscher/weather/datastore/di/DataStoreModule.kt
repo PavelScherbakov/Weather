@@ -4,16 +4,17 @@ import android.content.Context
 import androidx.room.Room
 import com.pscher.weather.coreapi.di.AppContext
 import com.pscher.weather.coreapi.di.AppScope
-import com.pscher.weather.datastore.repository.AppDataRepository
-import com.pscher.weather.datastore.repository.AppDataRepositoryImpl
-import com.pscher.weather.datastore.repository.AppSettingDataStore
+import com.pscher.weather.datastore.repository.*
 import com.pscher.weather.datastore.repository.pref.AppSettingDataStoreImpl
 import com.pscher.weather.datastore.repository.room.AppDatabase
 import com.pscher.weather.datastore.repository.room.AppDatabaseContract
 import com.pscher.weather.datastore.repository.room.dao.LocalityDao
+import dagger.Binds
 import dagger.Module
 import dagger.Provides
 import dagger.Reusable
+import dagger.multibindings.ClassKey
+import dagger.multibindings.IntoMap
 
 private const val APP_DATABASE_NAME = "APP_DB"
 
@@ -55,12 +56,19 @@ interface DataStoreModule {
             ).build()
             return db
         }
+
+        @Provides
+        @AppScope
+        fun provideAppDataRepositoryMediatorImpl(appDataRepository: AppDataRepository): AppDataRepositoryMediator {
+            return AppDataRepositoryMediatorImpl(
+                appDataRepository = appDataRepository,
+            )
+        }
     }
 
-    /*@Binds
-    fun bindGeoRepository(repository: AppDataRepositoryImpl): AppDataRepository*/
-}
+    @Binds
+    @IntoMap
+    @ClassKey(AppDataRepositoryMediator::class)
+    fun bindAppDataRepositoryMediator(mediator: AppDataRepositoryMediatorImpl): Any
 
-/*
-@Qualifier
-annotation class DataStoreRepository*/
+}

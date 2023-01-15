@@ -108,8 +108,8 @@ fun SettingScreen(
                     checked = uiState.appThemeDark,
                     onCheckedChange = { onChangeThemeLight(!uiState.appThemeDark) },
                     colors = SwitchDefaults.colors(
-                        checkedThumbColor = AppThemeParam.colors.primary,
-                        checkedTrackColor = AppThemeParam.colors.primary,
+                        checkedThumbColor = AppThemeParam.colors.primaryLight,
+                        checkedTrackColor = AppThemeParam.colors.primaryLight,
                         checkedTrackAlpha = 0.7f,
                         uncheckedThumbColor = AppThemeParam.colors.textHint,
                     ),

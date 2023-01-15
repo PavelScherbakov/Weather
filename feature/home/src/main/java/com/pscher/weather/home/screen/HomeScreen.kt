@@ -18,6 +18,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.lifecycleScope
 import com.google.accompanist.swiperefresh.SwipeRefresh
+import com.google.accompanist.swiperefresh.SwipeRefreshIndicator
 import com.google.accompanist.swiperefresh.rememberSwipeRefreshState
 import com.pscher.weather.ui.uikit.*
 import com.pscher.weather.ui.uikit.view.DelimiterHorizontal
@@ -50,8 +51,6 @@ fun HomeScreen(
             }
         }
     }
-
-    //val scroll = rememberScrollState(0)
 
     Column(
         modifier = Modifier
@@ -114,6 +113,18 @@ fun HomeScreen(
                     updateForecast(true)
                 }
             },
+            indicator = { state, trigger ->
+                SwipeRefreshIndicator(
+                    // Pass the SwipeRefreshState + trigger through
+                    state = state,
+                    refreshTriggerDistance = trigger,
+                    // Enable the scale animation
+                    //scale = true,
+                    // Change the color and shape
+                    backgroundColor = AppThemeParam.colors.primaryLight,
+                    //shape = MaterialTheme.shapes.small,
+                )
+            }
         ){
             LazyColumn(
                 modifier = Modifier
@@ -324,7 +335,6 @@ fun ColumnScope.WeatherForecastDayItem(
         }
 
         DelimiterHorizontal(
-            color = AppDark20,
             modifier = Modifier.padding(top = 16.dp),
         )
     }

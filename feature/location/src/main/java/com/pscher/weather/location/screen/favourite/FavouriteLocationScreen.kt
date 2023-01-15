@@ -15,9 +15,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.pscher.weather.core.model.Locality
-import com.pscher.weather.ui.uikit.AppDark10
-import com.pscher.weather.ui.uikit.AppDark20
 import com.pscher.weather.ui.uikit.AppThemeParam
+import com.pscher.weather.ui.uikit.Dark10
 import com.pscher.weather.ui.uikit.appToolbarHeightDp
 import com.pscher.weather.ui.uikit.view.DelimiterHorizontal
 import timber.log.Timber
@@ -102,7 +101,6 @@ fun FavouriteLocationScreen(
                     modifier = Modifier
                         .fillMaxWidth()
                         .height(60.dp)
-                        .background(AppDark10)
                         .clickable { onClickFavourite(favouriteLocality) }
                 ) {
                     Text(
@@ -117,7 +115,7 @@ fun FavouriteLocationScreen(
 
                 }
 
-                DelimiterHorizontal(color = AppDark20)
+                DelimiterHorizontal()
             }
         }
     }

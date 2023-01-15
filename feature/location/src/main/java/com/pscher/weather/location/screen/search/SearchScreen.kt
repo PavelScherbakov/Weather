@@ -120,7 +120,7 @@ fun SearchScreen(
                         }
                     }
 
-                    DelimiterHorizontal(color = AppDark20)
+                    DelimiterHorizontal()
                 }
             }
         }
