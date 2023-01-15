@@ -31,7 +31,7 @@ class AppSettingDataStoreImpl @Inject constructor(
         AppSettingDataStoreKeyImpl(intPreferencesKey("current_locality_id"))
             .readWrite(context)
 
-    override fun appThemeLight(): ReadWrite<Boolean> =
+    override fun appDarkTheme(): ReadWrite<Boolean> =
         AppSettingDataStoreKeyImpl(booleanPreferencesKey("is_app_theme_light"))
             .readWrite(context)
 }

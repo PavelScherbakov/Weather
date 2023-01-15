@@ -105,8 +105,8 @@ fun SettingScreen(
                     modifier = Modifier
                         .align(Alignment.CenterStart)
                         .padding(start = 16.dp),
-                    checked = uiState.appThemeDark,
-                    onCheckedChange = { onChangeThemeLight(!uiState.appThemeDark) },
+                    checked = uiState.appDarkTheme,
+                    onCheckedChange = { onChangeThemeLight(!uiState.appDarkTheme) },
                     colors = SwitchDefaults.colors(
                         checkedThumbColor = AppThemeParam.colors.primary,
                         checkedTrackColor = AppThemeParam.colors.primary,

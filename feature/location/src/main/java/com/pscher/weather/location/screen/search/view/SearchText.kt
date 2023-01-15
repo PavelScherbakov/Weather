@@ -28,9 +28,9 @@ fun SearchText(
     search: String?,
     enabled: Boolean,
     onSearch: (String?) -> Unit,
+    focusRequester: FocusRequester = remember { FocusRequester() }
 ) {
 
-    val focusRequester = remember { FocusRequester() }
     val focusManager = LocalFocusManager.current
     val focusModifier = Modifier.focusTarget()
     var isFilterFocused by remember { mutableStateOf(false) }

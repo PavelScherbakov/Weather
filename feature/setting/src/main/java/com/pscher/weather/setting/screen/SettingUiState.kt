@@ -1,15 +1,15 @@
 package com.pscher.weather.setting.screen
 
 data class SettingUiState(
-    val appThemeDark: Boolean,
+    val appDarkTheme: Boolean,
 )
 
 val testSettingUiState = SettingUiState(
-    appThemeDark = false,
+    appDarkTheme = false,
 )
 
 val initialSettingUiState = SettingUiState(
-    appThemeDark = false,
+    appDarkTheme = false,
 )
 
 

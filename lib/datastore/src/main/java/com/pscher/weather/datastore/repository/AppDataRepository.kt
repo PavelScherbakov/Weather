@@ -1,6 +1,5 @@
 package com.pscher.weather.datastore.repository
 
-import android.content.Context
 import com.pscher.weather.coreapi.di.AppContext
 import com.pscher.weather.datastore.repository.base.pref.ReadWrite
 import com.pscher.weather.datastore.repository.room.dao.LocalityDao
@@ -13,7 +12,7 @@ interface AppDataRepository {
 
 interface AppSettingDataStore {
     fun currentLocalityId(): ReadWrite<Int>
-    fun appThemeLight(): ReadWrite<Boolean>
+    fun appDarkTheme(): ReadWrite<Boolean>
 }
 
 class AppDataRepositoryImpl @Inject constructor(

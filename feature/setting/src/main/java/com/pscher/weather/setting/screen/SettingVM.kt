@@ -22,23 +22,23 @@ class SettingVM @Inject constructor(
         //Устанавливаем настройки приложения из настроек приложения )
         //todo runBlocking хорошо это или нет в данном случае?
         runBlocking(Dispatchers.IO) {
-            val appThemeLight = appDataRepository.appSettingDataStore().appThemeLight().get().firstOrNull() ?: false
-            Timber.e("SettingVM init appThemeLight = $appThemeLight")
+            val appDarkTheme = appDataRepository.appSettingDataStore().appDarkTheme().get().firstOrNull() ?: false
+            Timber.e("SettingVM init appThemeLight = $appDarkTheme")
 
             _settingUiState.update { settingUiState ->
                 settingUiState.copy(
-                    appThemeDark = appThemeLight,
+                    appDarkTheme = appDarkTheme,
                 )
             }
         }
     }
 
     suspend fun changeThemeLight(checked: Boolean) {
-        appDataRepository.appSettingDataStore().appThemeLight().set(checked)
+        appDataRepository.appSettingDataStore().appDarkTheme().set(checked)
 
         _settingUiState.update { settingUiState ->
             settingUiState.copy(
-                appThemeDark = checked,
+                appDarkTheme = checked,
             )
         }
     }
