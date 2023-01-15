@@ -9,3 +9,7 @@ apply from: "$rootDir/build-common.gradle"
 android {
     namespace 'com.pscher.weather.locationapi'
 }
+
+dependencies {
+    implementation project(":lib:network:geo-api")
+}

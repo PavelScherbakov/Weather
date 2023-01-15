@@ -7,9 +7,7 @@ import androidx.navigation.NavOptions
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navigation
-import com.pscher.weather.homeapi.HomeDestinations
-import com.pscher.weather.homeapi.HomeNavGraphMediator
-import com.pscher.weather.homeapi.HomeNavigationActions
+import com.pscher.weather.homeapi.*
 import com.pscher.weather.locationapi.LocationDestinations
 import com.pscher.weather.locationapi.LocationNavGraphMediator
 import com.pscher.weather.locationapi.LocationNavigationActions
@@ -72,13 +70,23 @@ class MasterNavGraphImpl @Inject constructor(
         navController.navigate(LocationDestinations.FAVOURITE_LOCATION_ROUTE)
     }
 
-    override fun openHomeScreen() {
+    override fun openHomeScreen(localityId: Int) {
         navController.navigate(
-            route = HomeDestinations.HOME_ROUTE,
+            route = HomeDestinations.HOME_ROUTE.replace(
+                oldValue = "{${HomeDestinationsArgs.LOCALITY_ID_ARG}}",
+                newValue = localityId.toString()),
             navOptions = NavOptions.Builder().setPopUpTo(
                 route = HomeDestinations.HOME_ROUTE,
                 inclusive = true,
             ).build()
         )
+    }
+
+    override fun openSearchScreen() {
+        navController.navigate(LocationDestinations.SEARCH_ROUTE)
+    }
+
+    override fun back() {
+        navController.popBackStack()
     }
 }

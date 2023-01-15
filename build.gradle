@@ -72,6 +72,11 @@ ext {
 
     accompanistVersion = '0.23.0'
     activityComposeVersion = '1.4.0'
+
+    dataStoreVersion = '1.0.0'
+
+    roomVersion = '2.4.2'
+
 //    androidXVersion = '1.0.0'
 //    androidXTestCoreVersion = '1.4.1-alpha06'
 //    androidXTestExtKotlinRunnerVersion = '1.1.4-alpha06'

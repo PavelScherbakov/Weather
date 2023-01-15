@@ -4,6 +4,8 @@ import android.app.Application
 import com.pscher.weather.coreapi.AppProvider
 import com.pscher.weather.coreapi.ProvidersFacade
 import com.pscher.weather.coreapi.di.AppScope
+import com.pscher.weather.datastore.di.DataStoreModule
+import com.pscher.weather.geoapi.di.GeoApiModule
 import com.pscher.weather.home.di.HomeNavigationModule
 import com.pscher.weather.home.di.HomeViewModelModule
 import com.pscher.weather.location.di.LocationNavigationModule
@@ -15,7 +17,7 @@ import dagger.Module
 
 @Component(
     dependencies = [AppProvider::class],
-    modules = [NavigationModules::class, ViewModelModules::class, ApiModules::class]
+    modules = [NavigationModules::class, ViewModelModules::class, ApiModules::class, DataStoreModule::class]
 )
 @AppScope
 interface FacadeComponent : ProvidersFacade {
@@ -48,6 +50,7 @@ interface ViewModelModules
     includes = [
         BaseApiModule::class,
         WeatherApiModule::class,
+        GeoApiModule::class,
     ]
 )
 interface ApiModules

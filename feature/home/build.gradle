@@ -14,8 +14,12 @@ dependencies {
     implementation project(":feature:home-api")
     implementation project(":feature:navigation-api")
     implementation project(":feature:main-api")
+
+    implementation project(":lib:core")
     implementation project(":lib:core-api")
     implementation project(":lib:network:weather-api")
+    implementation project(":lib:datastore")
+
     implementation project(":ui:uikit")
-    //implementation project(":resource:common")
+    implementation project(":resource:common")
 }

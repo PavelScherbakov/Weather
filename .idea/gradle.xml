@@ -23,8 +23,10 @@
             <option value="$PROJECT_DIR$/lib" />
             <option value="$PROJECT_DIR$/lib/core" />
             <option value="$PROJECT_DIR$/lib/core-api" />
+            <option value="$PROJECT_DIR$/lib/datastore" />
             <option value="$PROJECT_DIR$/lib/network" />
             <option value="$PROJECT_DIR$/lib/network/base-api" />
+            <option value="$PROJECT_DIR$/lib/network/geo-api" />
             <option value="$PROJECT_DIR$/lib/network/weather-api" />
             <option value="$PROJECT_DIR$/resource" />
             <option value="$PROJECT_DIR$/resource/common" />

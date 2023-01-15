@@ -15,4 +15,6 @@ dependencies {
     implementation project(":feature:navigation-api")
     implementation project(":feature:home-api")
     implementation project(":feature:location-api")
+
+    implementation project(":lib:network:geo-api")
 }

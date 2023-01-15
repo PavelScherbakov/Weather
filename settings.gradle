@@ -34,3 +34,5 @@ include ':resource:common'
 
 include ':lib:network:base-api'
 include ':lib:network:weather-api'
+include ':lib:network:geo-api'
+include ':lib:datastore'

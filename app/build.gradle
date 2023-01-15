@@ -33,6 +33,8 @@ dependencies {
     implementation project(":lib:core-api")
     implementation project(":lib:network:base-api")
     implementation project(":lib:network:weather-api")
+    implementation project(":lib:network:geo-api")
+    implementation project(":lib:datastore")
 
     implementation project(":resource:common")
 

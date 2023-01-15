@@ -1,17 +1,25 @@
 package com.pscher.weather.home.screen
 
+import com.pscher.weather.core.model.Locality
+import com.pscher.weather.core.model.defaultLocality
+import com.pscher.weather.core.model.testLocality
+import com.pscher.weather.network.weatherapi.repository.response.*
+
 data class HomeUiState(
-    val title: String,
-    val temperature: String,
+    val currentLocality: Locality,
+    val currentWeather: CurrentWeather,
+    val dailyForecastWeather: DailyForecastWeather,
 )
 
 
 val testHomeUiState = HomeUiState(
-    title = "HomeScreenTest",
-    temperature = "-",
+    currentLocality = testLocality,
+    currentWeather = testCurrentWeather,
+    dailyForecastWeather = testDailyForecastWeather,
 )
 
 val defaultHomeUiState = HomeUiState(
-    title = "HomeScreenDefault",
-    temperature = "-",
+    currentLocality = defaultLocality,
+    currentWeather = defaultCurrentWeather,
+    dailyForecastWeather = defaultDailyForecastWeather,
 )

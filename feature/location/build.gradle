@@ -14,6 +14,9 @@ dependencies {
     implementation project(":feature:location-api")
     implementation project(":feature:navigation-api")
     implementation project(":lib:core-api")
+    implementation project(":lib:network:geo-api")
     implementation project(":ui:uikit")
-    //implementation project(":resource:common")
+    implementation project(":resource:common")
+    implementation project(path: ':lib:core')
+    implementation project(path: ':lib:datastore')
 }
